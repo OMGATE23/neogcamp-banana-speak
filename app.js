@@ -1,7 +1,5 @@
-console.log("sup homie")
+var btnTranslate = document.querySelector("#btn-translate")
 
-var username = prompt("ENter your username : ")
-
-var welcomeMessage = "welcome " + username;
-
-alert(welcomeMessage)
+btnTranslate.addEventListener("click", function clickEventHandler(){
+    console.log("clicked")
+})
