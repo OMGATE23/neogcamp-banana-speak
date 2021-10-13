@@ -8,7 +8,9 @@ function getTransalationURL(text){
 }
 
 function errorHandler(error) {
-    console.log("error occured", error)
+    document.querySelector(".error").innerText = "Limit exceeded try again later";
+    // alert("error occured", error)
+
 }
 function clickHandler(){
     var inputText = txtInput.value;
@@ -16,6 +18,7 @@ function clickHandler(){
     fetch(getTransalationURL(inputText))
         .then(response => response.json())
         .then(json => {
+            document.querySelector(".error").innerText = "";
             var transalatedText = json.contents.translated;
             outputDiv.innerText = transalatedText;
         })
